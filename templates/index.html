@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EduGenie - AI Learning Assistant"
+    >
+
+    <title>EduGenie - AI Learning Assistant</title>
+
+    <link
+    rel="stylesheet" 
+    href="/static/style.css"
+    >
+    
+
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="container nav">
+
+        <div class="brand">
+
+            <div class="logo">
+                E
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    EduGenie
+                </div>
+
+                <div class="brand-subtitle">
+                    AI Learning Assistant
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <a
+            class="docs-link"
+            href="/docs"
+            target="_blank"
+            rel="noreferrer"
+        >
+            API Docs
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="container page-shell">
+
+
+    <section class="hero">
+
+        <div class="hero-copy">
+
+            <span class="eyebrow">
+                LEARN • PRACTICE • GROW
+            </span>
+
+
+            <h1>
+                Your personal study companion.
+            </h1>
+
+
+            <p>
+                Ask questions, simplify difficult
+                concepts, generate quizzes,
+                summarize study material,
+                and create a step-by-step
+                learning path.
+            </p>
+
+
+            <div class="feature-row">
+
+                <div class="feature-pill">
+                    Q&A
+                </div>
+
+                <div class="feature-pill">
+                    Explain
+                </div>
+
+                <div class="feature-pill">
+                    Quiz
+                </div>
+
+                <div class="feature-pill">
+                    Summary
+                </div>
+
+                <div class="feature-pill">
+                    Learning Path
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="workspace card">
+
+
+        <div class="workspace-head">
+
+            <div>
+
+                <h2>
+                    Learning Workspace
+                </h2>
+
+                <p>
+                    Choose a task and enter
+                    your question or study material.
+                </p>
+
+            </div>
+
+
+            <span
+                id="status-badge"
+                class="status-badge"
+            >
+                Ready
+            </span>
+
+        </div>
+
+
+
+        <form id="edu-form">
+
+
+            <label for="task">
+                Choose a task
+            </label>
+
+
+            <select
+                id="task"
+                name="task"
+            >
+
+                <option value="qa">
+                    Ask a Question
+                </option>
+
+                <option value="explain">
+                    Explain a Topic
+                </option>
+
+                <option value="quiz">
+                    Generate a Quiz
+                </option>
+
+                <option value="summarize">
+                    Summarize Text
+                </option>
+
+                <option value="learn">
+                    Recommend Learning Path
+                </option>
+
+            </select>
+
+
+
+            <label for="input-text">
+                Your input
+            </label>
+
+
+            <textarea
+                id="input-text"
+                name="input-text"
+                rows="9"
+                maxlength="12000"
+                placeholder="Example: Explain the Pythagoras theorem with a simple example."
+                required
+            ></textarea>
+
+
+
+            <div class="form-footer">
+
+                <span id="char-count">
+                    0 / 12000
+                </span>
+
+
+                <button
+                    id="submit-btn"
+                    type="submit"
+                >
+                    Generate Answer
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+
+    <section
+        id="result-card"
+        class="result-card card hidden"
+        aria-live="polite"
+    >
+
+
+        <div class="result-head">
+
+            <div>
+
+                <span class="eyebrow">
+                    EDUGENIE RESULT
+                </span>
+
+                <h2 id="result-title">
+                    Result
+                </h2>
+
+            </div>
+
+
+            <button
+                id="clear-btn"
+                class="secondary-btn"
+                type="button"
+            >
+                Clear
+            </button>
+
+        </div>
+
+
+        <div
+            id="result-content"
+            class="result-content"
+        ></div>
+
+    </section>
+
+
+
+    <section class="info-grid">
+
+
+        <article class="info-card">
+
+            <span class="info-number">
+                01
+            </span>
+
+            <h3>
+                Ask
+            </h3>
+
+            <p>
+                Get concise answers for
+                everyday study questions.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <span class="info-number">
+                02
+            </span>
+
+            <h3>
+                Understand
+            </h3>
+
+            <p>
+                Simplify difficult concepts
+                for beginner-level learning.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <span class="info-number">
+                03
+            </span>
+
+            <h3>
+                Practice
+            </h3>
+
+            <p>
+                Generate a three-question
+                MCQ quiz from study material.
+            </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+            <span class="info-number">
+                04
+            </span>
+
+            <h3>
+                Plan
+            </h3>
+
+            <p>
+                Build a learning journey from
+                beginner to advanced.
+            </p>
+
+        </article>
+
+
+    </section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container footer-inner">
+
+        <span>
+            EduGenie
+        </span>
+
+        <span>
+            FastAPI + Gemini + LaMini-Flan-T5
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="/static/app.js"></script>
+
+</body>
+
+</html>
